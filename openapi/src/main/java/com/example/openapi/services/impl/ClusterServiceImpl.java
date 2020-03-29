@@ -6,6 +6,7 @@ import com.example.openapi.services.ClusterService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +22,7 @@ public class ClusterServiceImpl extends DBaseServiceImpl<ClusterEntity> implemen
     private ClusterDao clusterDao;
 
     @Override
-    public CrudRepository<ClusterEntity, Long> getBaseDao() {
+    public JpaRepository<ClusterEntity, Long> getBaseDao() {
         return this.clusterDao;
     }
 }

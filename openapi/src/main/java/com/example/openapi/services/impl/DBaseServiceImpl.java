@@ -5,6 +5,7 @@ import com.example.openapi.services.DBaseService;
 import com.example.openapi.utils.page.PageParam;
 import com.google.common.base.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +26,7 @@ public abstract class DBaseServiceImpl<T> implements DBaseService<T> {
     @PersistenceContext
     public EntityManager entityManager;
 
-    public abstract CrudRepository<T, Long> getBaseDao();
+    public abstract JpaRepository<T, Long> getBaseDao();
 
     @Override
     public T saveOrUpdate(T t) {
